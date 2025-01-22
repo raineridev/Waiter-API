@@ -35,7 +35,13 @@ return [
     |
     */
 
-    'mailers' => [
+        'mailers' => [
+                'mailgun' => [
+            'transport' => 'mailgun',
+            // 'client' => [
+            //     'timeout' => 5,
+            // ],
+        ],
 
         'smtp' => [
             'transport' => 'smtp',
