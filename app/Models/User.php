@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Events\AccountCreated;
 use Laravel\Sanctum\HasApiTokens;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -21,6 +22,10 @@ class User extends Authenticatable
     protected $fillable = [
         'email',
         'password',
+    ];
+
+    protected $dispatchesEvents = [
+        'created' => AccountCreated::class,
     ];
 
     /**
